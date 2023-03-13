@@ -42,10 +42,10 @@ def generate_list_from_file(filename, json_filename):
             total_profit += profit
             count_profit += 1
         else:
-            profit_dict[name] = 'убыток'
+            profit_dict[name] = ['убыток', profit]
 
     average_profit = total_profit / count_profit
-    
+
     result_list = [profit_dict, {'average_profit': average_profit}]
     print(result_list)
     with open(json_filename, 'w', encoding='UTF-8') as f:
